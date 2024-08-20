@@ -3,12 +3,41 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Todu App</title>
+    <title>Todo App</title>
     <link rel="stylesheet" href="CSS/Style.css">
 </head>
 <body>
-    
-
+    <header>
+        <!-- Top header for title and links -->
+        <h1>Todo App</h1>
+        <span>
+            developed by @iamwors
+        </span>
+    </header>
+    <section class="create-container">
+        <!-- create-container used to create todo -->
+        <h3>Create your Todo now!.</h3>
+        <div class="create-todo">
+            <!-- create-todo create todo with message -->
+            <label for="todo-message">Todo</label>
+            <input type="text" name="todo-message" id="todo-message">
+            <input type="button" value="Create" id="create-btn">
+        </div>
+    </section>
+    <section class="todos-container">
+        <!-- todos-container show all todos -->
+        <h4>Todos : </h4>
+        <ul class="todo-list">
+            <li class="todo" data-id="">
+                <input type="checkbox" name="complete" id="complete">
+                <p class="message">hi</p>
+                <div class="action">
+                    <input type="button" value="edit">
+                    <input type="button" value="delete">
+                </div>
+            </li>
+        </ul>
+    </section>
     <script src="JS/main.js"></script>
 </body>
 </html>
