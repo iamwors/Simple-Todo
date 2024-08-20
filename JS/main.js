@@ -11,6 +11,7 @@ class Todo{
         this.action = document.createElement("div")
         this.edit_btn = document.createElement("input")
         this.delete_btn = document.createElement("input")
+        this.date = document.createElement("span")
 
         this.initialize()
         this.add_message(message)
@@ -33,14 +34,17 @@ class Todo{
         this.edit_btn.setAttribute("type","button")
         this.edit_btn.setAttribute("id","edit")
         this.edit_btn.setAttribute("value","edit")
-        // delte
+        // delete
         this.delete_btn.setAttribute("type","button")
         this.delete_btn.setAttribute("id","delete")
         this.delete_btn.setAttribute("value","delete")
+        // date
+        this.date.setAttribute("class","date")
 
     }
     add_message(message){
         this.message.innerText = message
+        this.date.innerText = new Date().toLocaleString()
     }
     finalize() {
         this.action.append(this.edit_btn)
@@ -60,7 +64,11 @@ class Todo{
         }
         this.todo.setAttribute("data-id",id)
         TodoList.append(this.todo)
-        Todos[id] = this
+        Todos[id] = {
+            "complete":this.complete,
+            "message":this.message,
+            "date":this.date
+        }
     }
 }
 
@@ -74,4 +82,5 @@ create_btn.onclick = ()=>{
         return
     }
     new Todo(TodoMessage.value)
+    TodoMessage.value = ''
 }
