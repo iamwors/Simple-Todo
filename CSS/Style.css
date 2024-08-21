@@ -57,9 +57,12 @@ header span{
     color: var(--text-secondary)
 }
 .create-container .create-todo #todo-message{
-    border: .1rem solid var(--primary);
     border-radius: 5px;
     padding: .3rem;
+}
+.create-container .create-todo #todo-message:focus{
+    border: .2rem solid var(--primary);
+    outline: none;
 }
 .create-container .create-todo #create-btn{
     border: 0px;
@@ -100,7 +103,13 @@ header span{
     padding: .8rem;
     margin-top: .5rem;
 }
-
+.todos-container .todo-list .todo #complete{
+    -moz-user-select: none;
+    user-select: none;
+    -webkit-user-select: none;
+    border-radius: 50%;
+    
+}
 .todos-container .todo-list .todo .message{
     margin: 0 1rem;
     width: 70%;
@@ -116,4 +125,18 @@ header span{
     bottom: .2rem;
     left: 35%;
     opacity: .7;
+}
+
+::-webkit-scrollbar{
+    width: 10px;
+}
+::-webkit-scrollbar-track{
+    background: var(--secondary);
+    background-clip: content-box;
+    border: 4px solid transparent;
+}
+::-webkit-scrollbar-thumb{
+    background: var(--primary);
+    border-radius: 5px;
+    
 }
