@@ -8,8 +8,6 @@ class Todo{
         this.todo = document.createElement("li")
         this.complete = document.createElement("input")
         this.message = document.createElement("p")
-        this.action = document.createElement("div")
-        this.edit_btn = document.createElement("input")
         this.delete_btn = document.createElement("input")
         this.date = document.createElement("span")
 
@@ -27,17 +25,17 @@ class Todo{
         this.complete.setAttribute("id","complete")
         // message
         this.message.setAttribute("class","message")
-        // action
-        this.action.setAttribute("class","action")
-        // --------------buttons-------------
-        // edit
-        this.edit_btn.setAttribute("type","button")
-        this.edit_btn.setAttribute("id","edit")
-        this.edit_btn.setAttribute("value","edit")
+        
         // delete
         this.delete_btn.setAttribute("type","button")
         this.delete_btn.setAttribute("id","delete")
-        this.delete_btn.setAttribute("value","delete")
+        this.delete_btn.setAttribute("value","x")
+        this.delete_btn.onclick = (e)=>{
+            let todo = e.target.parentElement
+            let id = todo.dataset["id"]
+            delete Todos[id]
+            todo.remove()
+        }
         // date
         this.date.setAttribute("class","date")
 
@@ -47,11 +45,9 @@ class Todo{
         this.date.innerText = new Date().toLocaleString()
     }
     finalize() {
-        this.action.append(this.edit_btn)
-        this.action.append(this.delete_btn)
         this.todo.append(this.complete)
         this.todo.append(this.message)
-        this.todo.append(this.action)
+        this.todo.append(this.delete_btn)
         this.todo.append(this.date)
     }
     store_todo(){
