@@ -5,6 +5,9 @@
     --invert-secondary: #fff;
     --text-primary: #fff;
     --text-secondary: #ccc;
+    --strong: #000;
+    --text: #000;
+    --link: rgb(3, 97, 126);
 }
 *{
     font-family: Arial, Helvetica, sans-serif;
@@ -30,7 +33,7 @@ header h1{
     color: var(--text-primary);
 }
 header span{
-    color: rgb(3, 97, 126);
+    color: var(--link);
 }
 
 .create-container{
@@ -38,6 +41,7 @@ header span{
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    position: relative;
     gap: 1rem;
     padding: 1rem 0;
     background-color: var(--secondary);
@@ -72,6 +76,15 @@ header span{
     color: var(--text-primary);
     background-color: var(--primary);
 }
+.create-container #theme-btn{
+    top: 1rem;
+    right: 1rem;
+    padding: 5px;
+    background-color: var(--background);
+    border: 0;
+    border-radius: 5px;
+    position: absolute;
+}
 
 .todos-container{
     display: flex;
@@ -82,6 +95,7 @@ header span{
     align-items: center;
 }
 .todos-container h4{
+    color: var(--strong);
     margin: 2vh;
     font-size: 1.2rem;
     align-self: flex-start;
@@ -136,6 +150,7 @@ header span{
     border-color: #fff;
 }
 .todos-container .todo-list .todo .message{
+    color: var(--text);
     margin: 0 1rem;
     width: 80%;
     margin-bottom: 3px;
@@ -151,6 +166,7 @@ header span{
     background-color: rgb(231, 31, 31);
 }
 .todos-container .todo-list .todo .date{
+    color: var(--text);
     position: absolute;
     font-size: .6rem;
     bottom: .2rem;
@@ -170,4 +186,15 @@ header span{
     background: var(--primary);
     border-radius: 5px;
     
+}
+.dark-theme{
+    --primary: rgb(165, 5, 228);
+    --secondary: #1d1d1d;
+    --background: #4e4e4e;
+    --invert-secondary: #353333;
+    --text-primary: #fff;
+    --text-secondary: #ddd;
+    --strong: #fff;
+    --text: #ddd;
+    --link: rgb(199, 192, 99);
 }
