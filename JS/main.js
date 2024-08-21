@@ -1,6 +1,7 @@
 const TodoMessage = document.getElementById("todo-message")
 const create_btn = document.getElementById("create-btn")
 const TodoList = document.querySelector("ul.todo-list")
+const theme_btn = document.getElementById("theme-btn")
 
 // todo item
 class Todo{
@@ -79,11 +80,21 @@ function createTodo(){
     new Todo(TodoMessage.value)
     TodoMessage.value = ''
 }
+function toggleTheme(){
+    document.body.classList.toggle("dark-theme")
+    if (theme_btn.value == "🌒"){
+        theme_btn.value = "🌞"
+    }
+    if (theme_btn.value == "🌞"){
+        theme_btn.value = "🌒"
+    }
+}
 
 
 
 // event
 create_btn.onclick = createTodo
+theme_btn.onclick = toggleTheme
 window.onkeydown = (e)=>{
     if (e.key == 'Enter'){
         createTodo()
