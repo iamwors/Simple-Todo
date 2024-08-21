@@ -142,6 +142,16 @@ header span{
     display: flex;
     flex-wrap: nowrap;
 }
+.todos-container .todo-list .todo .action #delete{
+    padding: 5px;
+    color: var(--text-primary);
+    border: none;
+    border-radius: 10px;
+}
+
+.todos-container .todo-list .todo .action #delete{
+    background-color: rgb(231, 31, 31);
+}
 .todos-container .todo-list .todo .date{
     position: absolute;
     font-size: .6rem;
