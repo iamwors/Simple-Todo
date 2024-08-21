@@ -104,11 +104,34 @@ header span{
     margin-top: .5rem;
 }
 .todos-container .todo-list .todo #complete{
-    -moz-user-select: none;
-    user-select: none;
-    -webkit-user-select: none;
+    appearance: none;
+    -webkit-appearance: none;
+    background-color: var(--background);
+    width: 1.2rem;
+    height: 1.2rem;
     border-radius: 50%;
-    
+    border: 1px solid #0000004b;
+    cursor: pointer;
+    position: relative;
+}
+.todos-container .todo-list .todo #complete::before{
+    position: absolute;
+    content: '';
+    top: 1px;
+    left: 5px;
+    width: 5px;
+    height: 10px;
+    border: 3px solid transparent;
+    border-left: none;
+    border-top: none;
+    transform: rotate(45deg);
+}
+.todos-container .todo-list .todo #complete:checked{
+    background-color: var(--primary);
+    border: none;
+}
+.todos-container .todo-list .todo #complete:checked::before{
+    border-color: #fff;
 }
 .todos-container .todo-list .todo .message{
     margin: 0 1rem;
