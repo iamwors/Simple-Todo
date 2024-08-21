@@ -71,12 +71,22 @@ class Todo{
 
 const Todos = {}
 
-
-// event
-create_btn.onclick = ()=>{
+// update funtions
+function createTodo(){
     if (TodoMessage.value == ''){
         return
     }
     new Todo(TodoMessage.value)
     TodoMessage.value = ''
+}
+
+
+
+// event
+create_btn.onclick = createTodo
+window.onkeydown = (e)=>{
+    if (e.key == 'Enter'){
+        createTodo()
+        TodoMessage.value = ''
+    }
 }
