@@ -39,7 +39,11 @@ header span {
   color: var(--link);
 }
 header span .github-icon{
+<<<<<<< HEAD
     height: 1.6rem;
+=======
+    height: 3vw;
+>>>>>>> 9643912 ([Style] change github icon style)
     mix-blend-mode: multiply;
     transform: translate(0, 6px);
 }
