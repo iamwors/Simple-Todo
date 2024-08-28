@@ -81,10 +81,17 @@ function toggleTheme() {
   let body = document.body
   body.classList.toggle("dark-theme");
   if (body.classList.contains('dark-theme')) {
+<<<<<<< HEAD
     theme_btn.setAttribute('src',"./icon/light.png");
   }
 	else{
     theme_btn.setAttribute('src',"./icon/dark.png");
+=======
+    theme_btn.setAttribute('src',"https://img.icons8.com/?size=100&id=SyBDr18WdUcD&format=png&color=000000");
+  }
+	else{
+    theme_btn.setAttribute('src',"https://img.icons8.com/?size=100&id=45475&format=png&color=000000");
+>>>>>>> c761a41 ([Refactor] add icons for theme button)
   }
 }
 
