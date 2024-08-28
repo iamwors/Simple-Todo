@@ -35,7 +35,11 @@ header h1 {
 header span {
   color: var(--link);
 }
-
+header span .github-icon{
+    height: 3vw;
+    mix-blend-mode: multiply;
+    transform: translate(0, 6px);
+}
 .create-container {
   display: flex;
   flex-direction: column;
