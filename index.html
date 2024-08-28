@@ -1,82 +1,38 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Todo App</title>
-    <link rel="stylesheet" href="CSS/Style.css">
-</head>
-<body>
+    <link rel="stylesheet" href="CSS/Style.css" />
+  </head>
+  <body>
     <header>
-        <!-- Top header for title and links -->
-        <h1>Todo App</h1>
-        <span>
-            developed by @iamwors
-        </span>
+      <!-- Top header for title and links -->
+      <h1>Todo App</h1>
+      <span>
+        developed by
+        <a target="_blank" href="https://github.com/iamwors">@iamwors</a>
+      </span>
     </header>
     <section class="create-container">
-        <!-- create-container used to create todo -->
-        <h3>Create your Todo now!.</h3>
-        <div class="create-todo">
-            <!-- create-todo create todo with message -->
-            <label for="todo-message">Todo</label>
-            <input type="text" name="todo-message" id="todo-message">
-            <input type="button" value="Create" id="create-btn">
-        </div>
-        <input type="button" id="theme-btn" value="🌒">
-        <!-- 🌞 -->
+      <!-- create-container used to create todo -->
+      <h3>Create your Todo now!.</h3>
+      <div class="create-todo">
+        <!-- create-todo create todo with message -->
+        <label for="todo-message">Todo</label>
+        <input type="text" name="todo-message" id="todo-message" />
+        <input type="button" value="Create" id="create-btn" />
+      </div>
+      <input type="button" id="theme-btn" value="🌒" />
     </section>
     <section class="todos-container">
-        <!-- todos-container show all todos -->
-        <h4>Todos : </h4>
-        <ul class="todo-list">
-            <li class="todo" data-id="">
-                <input type="checkbox" id="complete">
-                <p contenteditable="true" class="message">Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio non sint dolorum. Qui minus blanditiis optio rem tenetur alias minima et, corporis nisi consequuntur iste. Assumenda nam fuga quasi autem.</p>
-                <input type="button" id="delete" value="x">
-                <span class="date">8/21/24, 8:00 pm</span>
-            </li>
-            <li class="todo" data-id="">
-                <input type="checkbox" id="complete">
-                <p contenteditable="true" class="message">hi</p>
-                <input type="button" id="delete" value="x">
-                <span class="date">8/21/24, 8:00 pm</span>
-            </li>
-            <li class="todo" data-id="">
-                <input type="checkbox" id="complete">
-                <p contenteditable="true" class="message">Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio non sint dolorum.</p>
-                <input type="button" id="delete" value="x">
-                <span class="date">8/21/24, 8:00 pm</span>
-            </li>
-            <li class="todo" data-id="">
-                <input type="checkbox" id="complete">
-                <p contenteditable="true" class="message">Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio non sint dolorum.</p>
-                <input type="button" id="delete" value="x">
-                <span class="date">8/21/24, 8:00 pm</span>
-            </li>
-            <li class="todo" data-id="">
-                <input type="checkbox" id="complete">
-                <p contenteditable="true" class="message">Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio non sint dolorum.</p>
-                <input type="button" id="delete" value="x">
-                <span class="date">8/21/24, 8:00 pm</span>
-            </li>
-            <li class="todo" data-id="">
-                <input type="checkbox" id="complete">
-                <p contenteditable="true" class="message">Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio non sint dolorum.</p>
-                <input type="button" id="delete" value="x">
-                <span class="date">8/21/24, 8:00 pm</span>
-            </li>
-            <li class="todo" data-id="">
-                <input type="checkbox" id="complete">
-                <p contenteditable="true" class="message">Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio non sint dolorum.</p>
-                <div class="action">
-                    <input type="button" id="delete" value="x">
-                </div>
-                <span class="date">8/21/24, 8:00 pm</span>
-            </li>
-            
-        </ul>
+      <!-- todos-container show all todos -->
+      <h4>Todos :</h4>
+      <ul class="todo-list">
+        <!-- items -->
+      </ul>
     </section>
     <script src="JS/main.js"></script>
-</body>
+  </body>
 </html>

@@ -1,200 +1,199 @@
-:root{
-    --primary: rgb(5, 228, 5);
-    --secondary: #1d1d1d;
-    --background: #ccc;
-    --invert-secondary: #fff;
-    --text-primary: #fff;
-    --text-secondary: #ccc;
-    --strong: #000;
-    --text: #000;
-    --link: rgb(3, 97, 126);
+:root {
+  --primary: rgb(5, 228, 5);
+  --secondary: #1d1d1d;
+  --background: #ccc;
+  --invert-secondary: #fff;
+  --text-primary: #fff;
+  --text-secondary: #ccc;
+  --strong: #000;
+  --text: #000;
+  --link: rgb(3, 97, 126);
 }
-*{
-    font-family: Arial, Helvetica, sans-serif;
-    margin: 0;
-    padding: 0;
-    overflow: hidden;
+* {
+  font-family: Arial, Helvetica, sans-serif;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
 }
-body{
-    background-color: var(--background);
-}
-
-header{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    align-items: end;
-    flex-wrap: wrap;
-    gap: 1rem;
-    padding: .5rem 0;
-    background-color: var(--primary);
-}
-header h1{
-    color: var(--text-primary);
-}
-header span{
-    color: var(--link);
+body {
+  background-color: var(--background);
 }
 
-.create-container{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    position: relative;
-    gap: 1rem;
-    padding: 1rem 0;
-    background-color: var(--secondary);
+header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: end;
+  flex-wrap: wrap;
+  gap: 1rem;
+  padding: 0.5rem 0;
+  background-color: var(--primary);
 }
-.create-container h3{
-    color: var(--text-secondary);
+header h1 {
+  color: var(--text-primary);
 }
-.create-container .create-todo{
-    display: flex;
-    flex-direction: row;
-    align-items:center;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: .5rem;
-}
-.create-container .create-todo label{
-    color: var(--text-secondary)
-}
-.create-container .create-todo #todo-message{
-    border-radius: 5px;
-    padding: .3rem;
-}
-.create-container .create-todo #todo-message:focus{
-    border: .2rem solid var(--primary);
-    outline: none;
-}
-.create-container .create-todo #create-btn{
-    border: 0px;
-    outline: none;
-    border-radius: 5px;
-    padding: .3rem;
-    color: var(--text-primary);
-    background-color: var(--primary);
-}
-.create-container #theme-btn{
-    top: 1rem;
-    right: 1rem;
-    padding: 5px;
-    background-color: var(--background);
-    border: 0;
-    border-radius: 5px;
-    position: absolute;
+header span {
+  color: var(--link);
 }
 
-.todos-container{
-    display: flex;
-    flex-direction: column;
-    height: 100vh;
-    /* margin: 0 5vw; */
-    padding: 0 5vw;
-    align-items: center;
+.create-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  gap: 1rem;
+  padding: 1rem 0;
+  background-color: var(--secondary);
 }
-.todos-container h4{
-    color: var(--strong);
-    margin: 2vh;
-    font-size: 1.2rem;
-    align-self: flex-start;
+.create-container h3 {
+  color: var(--text-secondary);
 }
-.todos-container .todo-list{
-    background-color: var(--invert-secondary);
-    margin-bottom: 5rem;
-    width: 100%;
-    height: 65%;
-    border-radius: 10px;
-    overflow-y: scroll;
-    box-shadow: 2px 5px 10px #00000057;
+.create-container .create-todo {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.5rem;
 }
-.todos-container .todo-list .todo{
-    border-bottom: 1px solid #00000071;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    position: relative;
-    align-items: center;
-    padding: .8rem;
-    margin-top: .5rem;
+.create-container .create-todo label {
+  color: var(--text-secondary);
 }
-.todos-container .todo-list .todo #complete{
-    appearance: none;
-    -webkit-appearance: none;
-    background-color: var(--background);
-    width: 1.2rem;
-    height: 1.2rem;
-    border-radius: 50%;
-    border: 1px solid #0000004b;
-    cursor: pointer;
-    position: relative;
+.create-container .create-todo #todo-message {
+  border-radius: 5px;
+  padding: 0.3rem;
 }
-.todos-container .todo-list .todo #complete::before{
-    position: absolute;
-    content: '';
-    top: 1px;
-    left: 5px;
-    width: 5px;
-    height: 10px;
-    border: 3px solid transparent;
-    border-left: none;
-    border-top: none;
-    transform: rotate(45deg);
+.create-container .create-todo #todo-message:focus {
+  border: 0.2rem solid var(--primary);
+  outline: none;
 }
-.todos-container .todo-list .todo #complete:checked{
-    background-color: var(--primary);
-    border: none;
+.create-container .create-todo #create-btn {
+  border: 0px;
+  outline: none;
+  border-radius: 5px;
+  padding: 0.3rem;
+  color: var(--text-primary);
+  background-color: var(--primary);
 }
-.todos-container .todo-list .todo #complete:checked::before{
-    border-color: #fff;
-}
-.todos-container .todo-list .todo .message{
-    color: var(--text);
-    margin: 0 1rem;
-    width: 80%;
-    margin-bottom: 3px;
-}
-.todos-container .todo-list .todo #delete{
-    font-size: 1.3rem;
-    width: 1.5rem;
-    height: 1.5rem;
-    text-align: center;
-    color: var(--text-primary);
-    border: none;
-    border-radius: 50%;
-    background-color: rgb(231, 31, 31);
-}
-.todos-container .todo-list .todo .date{
-    color: var(--text);
-    position: absolute;
-    font-size: .6rem;
-    bottom: .2rem;
-    left: 35%;
-    opacity: .7;
+.create-container #theme-btn {
+  top: 1rem;
+  right: 1rem;
+  padding: 5px;
+  background-color: var(--background);
+  border: 0;
+  border-radius: 5px;
+  position: absolute;
 }
 
-::-webkit-scrollbar{
-    width: 10px;
+.todos-container {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  /* margin: 0 5vw; */
+  padding: 0 5vw;
+  align-items: center;
 }
-::-webkit-scrollbar-track:active{
-    background: var(--secondary);
-    background-clip: content-box;
-    border: 4px solid transparent;
+.todos-container h4 {
+  color: var(--strong);
+  margin: 2vh;
+  font-size: 1.2rem;
+  align-self: flex-start;
 }
-::-webkit-scrollbar-thumb{
-    background: var(--primary);
-    border-radius: 5px;
-    
+.todos-container .todo-list {
+  background-color: var(--invert-secondary);
+  margin-bottom: 5rem;
+  width: 100%;
+  height: 65%;
+  border-radius: 10px;
+  overflow-y: scroll;
+  box-shadow: 2px 5px 10px #00000057;
 }
-.dark-theme{
-    --primary: rgb(165, 5, 228);
-    --secondary: #1d1d1d;
-    --background: #4e4e4e;
-    --invert-secondary: #353333;
-    --text-primary: #fff;
-    --text-secondary: #ddd;
-    --strong: #fff;
-    --text: #ddd;
-    --link: rgb(199, 192, 99);
+.todos-container .todo-list .todo {
+  border-bottom: 1px solid #00000071;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  position: relative;
+  align-items: center;
+  padding: 0.8rem;
+  margin-top: 0.5rem;
+}
+.todos-container .todo-list .todo #complete {
+  appearance: none;
+  -webkit-appearance: none;
+  background-color: var(--background);
+  width: 1.2rem;
+  height: 1.2rem;
+  border-radius: 50%;
+  border: 1px solid #0000004b;
+  cursor: pointer;
+  position: relative;
+}
+.todos-container .todo-list .todo #complete::before {
+  position: absolute;
+  content: "";
+  top: 1px;
+  left: 5px;
+  width: 5px;
+  height: 10px;
+  border: 3px solid transparent;
+  border-left: none;
+  border-top: none;
+  transform: rotate(45deg);
+}
+.todos-container .todo-list .todo #complete:checked {
+  background-color: var(--primary);
+  border: none;
+}
+.todos-container .todo-list .todo #complete:checked::before {
+  border-color: #fff;
+}
+.todos-container .todo-list .todo .message {
+  color: var(--text);
+  margin: 0 1rem;
+  width: 80%;
+  margin-bottom: 3px;
+}
+.todos-container .todo-list .todo #delete {
+  font-size: 1.3rem;
+  width: 1.5rem;
+  height: 1.5rem;
+  text-align: center;
+  color: var(--text-primary);
+  border: none;
+  border-radius: 50%;
+  background-color: rgb(231, 31, 31);
+}
+.todos-container .todo-list .todo .date {
+  color: var(--text);
+  position: absolute;
+  font-size: 0.6rem;
+  bottom: 0.2rem;
+  left: 35%;
+  opacity: 0.7;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-track:active {
+  background: var(--secondary);
+  background-clip: content-box;
+  border: 4px solid transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: var(--primary);
+  border-radius: 5px;
+}
+.dark-theme {
+  --primary: rgb(165, 5, 228);
+  --secondary: #1d1d1d;
+  --background: #4e4e4e;
+  --invert-secondary: #353333;
+  --text-primary: #fff;
+  --text-secondary: #ddd;
+  --strong: #fff;
+  --text: #ddd;
+  --link: rgb(199, 192, 99);
 }
