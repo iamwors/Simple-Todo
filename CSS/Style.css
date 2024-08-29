@@ -114,17 +114,31 @@ header span .github-icon{
   height: 65%;
   border-radius: 10px;
   overflow-y: scroll;
+  position: relative;
   box-shadow: 2px 5px 10px #00000057;
 }
+.todos-container .todo-list::before{
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-image: url(../icon/createTodo.png);
+  background-repeat: no-repeat;
+  background-position: center;
+  opacity: .4;
+}
 .todos-container .todo-list .todo {
-  border-bottom: 1px solid #00000071;
+  border-bottom: 1px solid #0000009a;
   display: flex;
   flex-direction: row;
   justify-content: space-around;
   position: relative;
   align-items: center;
   padding: 0.8rem;
-  margin-top: 0.5rem;
+  background-color: var(--invert-secondary);
+}
+.todos-container .todo-list .todo:last-child{
+  box-shadow: 0 5px 10px #0000002d;
 }
 .todos-container .todo-list .todo #complete {
   appearance: none;
