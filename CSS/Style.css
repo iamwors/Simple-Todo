@@ -84,13 +84,13 @@ header span .github-icon{
 }
 .create-container #theme-btn {
   top: 1rem;
-  width: 1.7rem;
+  width: 1.5rem;
   right: 1rem;
   padding: 5px;
-  background-color: var(--background);
-  border: 0;
-  border-radius: 5px;
+  border-radius: 50%;
   position: absolute;
+  filter: brightness(0) saturate(100%) invert(70%) sepia(97%) saturate(5) hue-rotate(10deg) brightness(124%) contrast(102%);
+  box-shadow: 0 0 5px #fff;
 }
 
 .todos-container {
