@@ -82,6 +82,7 @@ function toggleTheme() {
   body.classList.toggle("dark-theme");
   if (body.classList.contains('dark-theme')) {
 <<<<<<< HEAD
+<<<<<<< HEAD
     theme_btn.setAttribute('src',"./icon/light.png");
   }
 	else{
@@ -92,6 +93,12 @@ function toggleTheme() {
 	else{
     theme_btn.setAttribute('src',"https://img.icons8.com/?size=100&id=45475&format=png&color=000000");
 >>>>>>> c761a41 ([Refactor] add icons for theme button)
+=======
+    theme_btn.setAttribute('src',"./icon/light.png");
+  }
+	else{
+    theme_btn.setAttribute('src',"./icon/dark.png");
+>>>>>>> 0248c6d ([Chore] change icons path to icon/ folder)
   }
 }
 
