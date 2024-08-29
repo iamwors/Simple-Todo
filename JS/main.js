@@ -30,7 +30,6 @@ class Todo {
     // delete
     this.delete_btn.setAttribute("type", "button");
     this.delete_btn.setAttribute("id", "delete");
-    this.delete_btn.setAttribute("value", "x");
     this.delete_btn.onclick = (e) => {
       let todo = e.target.parentElement;
       let id = todo.dataset["id"];
@@ -79,12 +78,13 @@ function createTodo() {
   TodoMessage.value = "";
 }
 function toggleTheme() {
-  document.body.classList.toggle("dark-theme");
-  if (theme_btn.value == "🌒") {
-    theme_btn.value = "🌞";
+  let body = document.body
+  body.classList.toggle("dark-theme");
+  if (body.classList.contains('dark-theme')) {
+    theme_btn.setAttribute('src',"./icon/light.png");
   }
-  if (theme_btn.value == "🌞") {
-    theme_btn.value = "🌒";
+	else{
+    theme_btn.setAttribute('src',"./icon/dark.png");
   }
 }
 
