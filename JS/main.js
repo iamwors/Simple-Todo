@@ -30,7 +30,6 @@ class Todo {
     // delete
     this.delete_btn.setAttribute("type", "button");
     this.delete_btn.setAttribute("id", "delete");
-    this.delete_btn.setAttribute("value", "x");
     this.delete_btn.onclick = (e) => {
       let todo = e.target.parentElement;
       let id = todo.dataset["id"];
