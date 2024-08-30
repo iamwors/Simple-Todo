@@ -6,6 +6,7 @@ Simple To-Do application that allows users to mange their tasks efficiently.The 
 ## **Table of Contents**
 1. [Features](#features)
 2. [Installation](#installation)
+3. [Demo](#demo)
 
 ## **Features**
 
@@ -38,4 +39,7 @@ Simple To-Do application that allows users to mange their tasks efficiently.The 
     ```bash
     npm start
 This project build using pure HTML, CSS, JS. open `indec.html` in your browser.
+
+## **Demo**
+click here to visit live website [Simple To-do App](https://iamwors.github.io/Simple-Todo/)
 
