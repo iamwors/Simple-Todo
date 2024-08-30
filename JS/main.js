@@ -24,18 +24,31 @@ class Todo {
     this.complete.setAttribute("type", "checkbox");
     this.complete.setAttribute("name", "complete");
     this.complete.setAttribute("id", "complete");
+    this.complete.oninput = (e) => {
+      let id = parseInt(e.target.parentElement.dataset['id'])
+      let getTask = JSON.parse(localStorage.getItem(id))
+      getTask.complete = e.target.checked
+      saveToLocalStorage(id,getTask)
+    }
     // message
     this.message.setAttribute("class", "message");
-
+    this.message.setAttribute("contenteditable","true")
     // delete
     this.delete_btn.setAttribute("type", "button");
     this.delete_btn.setAttribute("id", "delete");
     this.delete_btn.onclick = (e) => {
-      let todo = e.target.parentElement;
-      let id = todo.dataset["id"];
-      delete Todos[id];
+      let todo = e.target.parentElement
+      let id = parseInt(todo.dataset['id'])
+      localStorage.removeItem(id)
       todo.remove();
     };
+    //edit todo
+    this.message.oninput = (e)=>{
+      let id = parseInt(e.target.parentElement.dataset['id'])
+      let getTask = JSON.parse(localStorage.getItem(id))
+      getTask.message = e.target.innerText
+      saveToLocalStorage(id,getTask)
+    }
     // date
     this.date.setAttribute("class", "date");
   }
@@ -52,22 +65,22 @@ class Todo {
   store_todo() {
     let id = parseInt(Math.random() * 10000);
     while (true) {
-      if (Todos[id] == undefined) {
+      if (localStorage.getItem(id) == null) {
         break;
       }
       id = parseInt(Math.random() * 10000);
     }
     this.todo.setAttribute("data-id", id);
     TodoList.append(this.todo);
-    Todos[id] = {
-      complete: this.complete,
-      message: this.message,
-      date: this.date,
-    };
+    let task = {
+      "complete": this.complete.checked,
+      "message": this.message.innerText,
+      "date": this.date.innerText,
+    }
+    saveToLocalStorage(id,task)
   }
 }
 
-const Todos = {};
 
 // update funtions
 function createTodo() {
@@ -77,6 +90,11 @@ function createTodo() {
   new Todo(TodoMessage.value);
   TodoMessage.value = "";
 }
+
+function saveToLocalStorage(key,value){
+  localStorage.setItem(key,JSON.stringify(value))
+}
+
 function toggleTheme() {
   let body = document.body
   body.classList.toggle("dark-theme");
