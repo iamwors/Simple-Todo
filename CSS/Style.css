@@ -8,6 +8,9 @@
   --strong: #000;
   --text: #000;
   --link: rgb(3, 97, 126);
+  --saturate: 50;
+  --hue: 86deg;
+  --dark-sature: 0;
 }
 * {
   font-family: Arial, Helvetica, sans-serif;
@@ -35,7 +38,11 @@ header h1 {
 header span {
   color: var(--link);
 }
-
+header span .github-icon{
+    height: 1.6rem;
+    mix-blend-mode: multiply;
+    transform: translate(0, 6px);
+}
 .create-container {
   display: flex;
   flex-direction: column;
@@ -77,13 +84,14 @@ header span {
   background-color: var(--primary);
 }
 .create-container #theme-btn {
-  top: 1rem;
-  right: 1rem;
+  top: -.1rem;
+  width: 1.5rem;
+  right: -.1rem;
   padding: 5px;
-  background-color: var(--background);
-  border: 0;
-  border-radius: 5px;
+  border-radius: 0% 0% 0% 50%;
   position: absolute;
+  filter: brightness(0) saturate(100%) invert(70%) sepia(97%) saturate(var(--dark-sature)) hue-rotate(0deg) brightness(124%) contrast(102%) drop-shadow(0 0 3px yellow);
+  box-shadow: 0 0 5px #fff;
 }
 
 .todos-container {
@@ -107,22 +115,37 @@ header span {
   height: 65%;
   border-radius: 10px;
   overflow-y: scroll;
+  position: relative;
   box-shadow: 2px 5px 10px #00000057;
 }
+.todos-container .todo-list::before{
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-image: url(../icon/createTodo.png);
+  background-repeat: no-repeat;
+  background-position: center;
+  opacity: .4;
+}
 .todos-container .todo-list .todo {
-  border-bottom: 1px solid #00000071;
+  border-bottom: 1px solid #0000009a;
   display: flex;
   flex-direction: row;
   justify-content: space-around;
   position: relative;
   align-items: center;
   padding: 0.8rem;
-  margin-top: 0.5rem;
+  background-color: var(--invert-secondary);
+}
+.todos-container .todo-list .todo:last-child{
+  box-shadow: 0 5px 10px #0000002d;
 }
 .todos-container .todo-list .todo #complete {
   appearance: none;
   -webkit-appearance: none;
   background-color: var(--background);
+  background-image: none;
   width: 1.2rem;
   height: 1.2rem;
   border-radius: 50%;
@@ -130,24 +153,12 @@ header span {
   cursor: pointer;
   position: relative;
 }
-.todos-container .todo-list .todo #complete::before {
-  position: absolute;
-  content: "";
-  top: 1px;
-  left: 5px;
-  width: 5px;
-  height: 10px;
-  border: 3px solid transparent;
-  border-left: none;
-  border-top: none;
-  transform: rotate(45deg);
-}
+
 .todos-container .todo-list .todo #complete:checked {
-  background-color: var(--primary);
   border: none;
-}
-.todos-container .todo-list .todo #complete:checked::before {
-  border-color: #fff;
+  background: url(../icon/checked.png);
+  background-repeat: round;
+  filter: brightness(0) saturate(100%) invert(70%) sepia(97%) saturate(var(--saturate)) hue-rotate(var(--hue))     brightness(124%) contrast(102%);
 }
 .todos-container .todo-list .todo .message {
   color: var(--text);
@@ -159,11 +170,11 @@ header span {
   font-size: 1.3rem;
   width: 1.5rem;
   height: 1.5rem;
-  text-align: center;
-  color: var(--text-primary);
   border: none;
   border-radius: 50%;
-  background-color: rgb(231, 31, 31);
+  background-image: url(../icon/remove.png);
+  background-repeat: round;
+  background-color: transparent;
 }
 .todos-container .todo-list .todo .date {
   color: var(--text);
@@ -196,4 +207,7 @@ header span {
   --strong: #fff;
   --text: #ddd;
   --link: rgb(199, 192, 99);
+  --saturate: 100;
+  --hue: -84deg;
+  --dark-sature: 3;
 }
