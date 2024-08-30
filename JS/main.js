@@ -15,7 +15,6 @@ class Todo {
     this.initialize();
     this.add_message(message);
     this.finalize();
-    this.store_todo();
   }
   initialize() {
     // todo
@@ -62,14 +61,20 @@ class Todo {
     this.todo.append(this.delete_btn);
     this.todo.append(this.date);
   }
+  apply(id,date){
+    this.todo.setAttribute("data-id", id);
+    TodoList.append(this.todo);
+    this.date.innerText = date;
+  }
+
   store_todo() {
     let id = parseInt(Math.random() * 10000);
-    while (true) {
-      if (localStorage.getItem(id) == null) {
-        break;
+      while (true) {
+        if (localStorage.getItem(id) == null) {
+          break;
+        }
+        id = parseInt(Math.random() * 10000);
       }
-      id = parseInt(Math.random() * 10000);
-    }
     this.todo.setAttribute("data-id", id);
     TodoList.append(this.todo);
     let task = {
@@ -79,6 +84,7 @@ class Todo {
     }
     saveToLocalStorage(id,task)
   }
+  
 }
 
 
@@ -87,7 +93,9 @@ function createTodo() {
   if (TodoMessage.value == "") {
     return;
   }
-  new Todo(TodoMessage.value);
+  let task = new Todo(TodoMessage.value);
+  task.store_todo()
+
   TodoMessage.value = "";
 }
 
@@ -107,6 +115,22 @@ function toggleTheme() {
 }
 
 // event
+window.onload = ()=>{
+  if (localStorage.length == 0) return
+  let getTasks = Object.keys(localStorage)
+  let Tasks = []
+  getTasks.forEach(key=>{
+    let id = parseInt(key)
+    let task = JSON.parse(localStorage.getItem(id))
+    Tasks.push([id,task])
+  })
+  Tasks.sort((a,b)=> {return new Date(a[1].date) - new Date(b[1].date) })
+  Tasks.forEach(task=>{
+    let todo = new Todo(task[1].message)
+    todo.complete.checked = task[1].complete
+    todo.apply(task[0],task[1].date)
+  })
+}
 create_btn.onclick = createTodo;
 theme_btn.onclick = toggleTheme;
 window.onkeydown = (e) => {
