@@ -23,6 +23,12 @@ class Todo {
     this.complete.setAttribute("type", "checkbox");
     this.complete.setAttribute("name", "complete");
     this.complete.setAttribute("id", "complete");
+<<<<<<< HEAD
+=======
+
+    // message
+    this.message.setAttribute("class", "message");
+>>>>>>> 6b9b012 ([Refactor] delete garbage)
     this.complete.oninput = (e) => {
       let id = parseInt(e.target.parentElement.dataset['id'])
       let getTask = JSON.parse(localStorage.getItem(id))
@@ -32,22 +38,34 @@ class Todo {
     // message
     this.message.setAttribute("class", "message");
     this.message.setAttribute("contenteditable","true")
+<<<<<<< HEAD
+=======
+
+>>>>>>> 6b9b012 ([Refactor] delete garbage)
     // delete
     this.delete_btn.setAttribute("type", "button");
     this.delete_btn.setAttribute("id", "delete");
     this.delete_btn.onclick = (e) => {
+<<<<<<< HEAD
+=======
+
+>>>>>>> 6b9b012 ([Refactor] delete garbage)
       let todo = e.target.parentElement
       let id = parseInt(todo.dataset['id'])
       localStorage.removeItem(id)
       todo.remove();
     };
     //edit todo
-    this.message.oninput = (e)=>{
+    this.message.oninput = (e) => {
       let id = parseInt(e.target.parentElement.dataset['id'])
       let getTask = JSON.parse(localStorage.getItem(id))
       getTask.message = e.target.innerText
       saveToLocalStorage(id,getTask)
     }
+<<<<<<< HEAD
+=======
+
+>>>>>>> 6b9b012 ([Refactor] delete garbage)
     // date
     this.date.setAttribute("class", "date");
   }
@@ -61,6 +79,11 @@ class Todo {
     this.todo.append(this.delete_btn);
     this.todo.append(this.date);
   }
+<<<<<<< HEAD
+=======
+
+
+>>>>>>> 6b9b012 ([Refactor] delete garbage)
   apply(id,date){
     this.todo.setAttribute("data-id", id);
     TodoList.append(this.todo);
@@ -145,6 +168,10 @@ window.onload = ()=>{
     todo.apply(task[0],task[1].date)
   })
 }
+<<<<<<< HEAD
+=======
+
+>>>>>>> 6b9b012 ([Refactor] delete garbage)
 create_btn.onclick = createTodo;
 theme_btn.onclick = toggleTheme;
 window.onkeydown = (e) => {
